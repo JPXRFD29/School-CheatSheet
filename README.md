@@ -10,4 +10,6 @@ Hier vind je alle documentatie, emails/belangrijke berichten en project-voorbeel
 >   * Login Systeem
 >   * Verschillende Filters
 >   * Meerdere projecten in 1 soluction
+> - Templates:
+>   * Code-conventions
 > - . . .
