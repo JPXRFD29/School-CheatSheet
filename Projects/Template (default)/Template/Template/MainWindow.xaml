@@ -9,7 +9,61 @@
     mc:Ignorable="d"
     Title="Template">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
-    </StackPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" x:Name="HeaderRowDef"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Grid Grid.Row="0" BorderThickness="0 0 0 1.5" BorderBrush="#EBEBEB" x:Name="HeaderContent" Visibility="Visible">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RenderTransform>
+                <TranslateTransform x:Name="HeaderTransform" Y="-50"/>
+            </Grid.RenderTransform>
+
+            <!-- Left Column -->
+            <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="20 0 0 0">
+                <!-- Logo -->
+                <StackPanel Orientation="Horizontal" Spacing="5" VerticalAlignment="Center">
+                    <Image Source="/Assets/Square44x44Logo.png"
+                           Width="35"
+                           VerticalAlignment="Bottom"/>
+                    <TextBlock Text="[Company Name]"
+                               VerticalAlignment="Center"
+                               Opacity="0.5"/>
+                </StackPanel>
+            </StackPanel>
+
+            <!-- Right Column -->
+            <StackPanel Grid.Column="1" 
+                        Orientation="Horizontal" 
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Padding="0 0 20 0">
+                
+                <Button Content="Logout"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        x:Name="LogoutButton"
+                        Click="LogoutButton_Click"/>
+            </StackPanel>
+            
+        </Grid>
+
+        <!--<Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15*" x:Name="LeftColumn"/>
+                <ColumnDefinition Width="70*" x:Name="ContentColumn"/>
+                <ColumnDefinition Width="15*" x:Name="RightColumn"/>
+            </Grid.ColumnDefinitions>
+            <Frame Grid.Column="1" x:Name="contentFrame"/>
+        </Grid>-->
+        
+        <Frame Grid.Row="1" x:Name="ContentFrame"/>
+    </Grid>
 </Window>
