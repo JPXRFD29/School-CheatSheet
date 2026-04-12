@@ -15,7 +15,9 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Pages\HomePage.xaml" />
+    <None Remove="Pages\ItemDetailPage.xaml" />
     <None Remove="Pages\LoginPage.xaml" />
+    <None Remove="Pages\TemplateDashboardPage.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -65,6 +67,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resource\Theaters\Example_Theater\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Pages\ItemDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Pages\TemplateDashboardPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <!--

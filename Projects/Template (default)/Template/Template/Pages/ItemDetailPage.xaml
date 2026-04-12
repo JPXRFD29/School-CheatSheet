@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Template.Pages.ItemDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Template.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="15*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1" Background="#F5F5F5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Top bar -->
+            <Grid Grid.Row="0" Margin="0,24,0,16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Click="BackButton_Click" Margin="0,0,12,0"
+                        Background="White" BorderBrush="#3a7ff9" BorderThickness="1" CornerRadius="6" Padding="14,8">
+                    <TextBlock Text="← Back" Foreground="#3a7ff9" FontSize="13" FontWeight="SemiBold"/>
+                </Button>
+                <TextBlock Grid.Column="1" Text="Item Details"
+                           FontSize="22" FontWeight="Bold" Foreground="#3a7ff9" VerticalAlignment="Center"/>
+            </Grid>
+
+            <!-- Card -->
+            <Border Grid.Row="1" Background="White" CornerRadius="10"
+                    BorderBrush="#E0E0E0" BorderThickness="1"
+                    Margin="0,0,0,24" Padding="28">
+                <StackPanel>
+
+                    <!-- ID (read-only always) -->
+                    <TextBlock Text="ID" Foreground="#888" FontSize="11" FontWeight="SemiBold" Margin="0,0,0,4"/>
+                    <Border Background="#EBF2FF" CornerRadius="5" Padding="8,4" HorizontalAlignment="Left" Margin="0,0,0,20">
+                        <TextBlock x:Name="IdText" Foreground="#3a7ff9" FontWeight="SemiBold" FontSize="13"/>
+                    </Border>
+
+                    <!-- Name -->
+                    <TextBlock Text="NAME" Foreground="#888" FontSize="11" FontWeight="SemiBold" Margin="0,0,0,4"/>
+                    <TextBox x:Name="NameBox" BorderBrush="#3a7ff9" CornerRadius="6" Height="36"
+                             VerticalContentAlignment="Center" Margin="0,0,0,16"/>
+
+                    <!-- Email -->
+                    <TextBlock Text="EMAIL" Foreground="#888" FontSize="11" FontWeight="SemiBold" Margin="0,0,0,4"/>
+                    <TextBox x:Name="EmailBox" BorderBrush="#3a7ff9" CornerRadius="6" Height="36"
+                             VerticalContentAlignment="Center" Margin="0,0,0,16"/>
+
+                    <!-- Role -->
+                    <TextBlock Text="ROLE" Foreground="#888" FontSize="11" FontWeight="SemiBold" Margin="0,0,0,4"/>
+                    <TextBox x:Name="RoleBox" BorderBrush="#3a7ff9" CornerRadius="6" Height="36"
+                             VerticalContentAlignment="Center" Margin="0,0,0,16"/>
+
+                    <!-- Department -->
+                    <TextBlock Text="DEPARTMENT" Foreground="#888" FontSize="11" FontWeight="SemiBold" Margin="0,0,0,4"/>
+                    <TextBox x:Name="DepartmentBox" BorderBrush="#3a7ff9" CornerRadius="6" Height="36"
+                             VerticalContentAlignment="Center" Margin="0,0,0,16"/>
+
+                    <!-- Status -->
+                    <TextBlock Text="STATUS" Foreground="#888" FontSize="11" FontWeight="SemiBold" Margin="0,0,0,4"/>
+                    <ComboBox x:Name="StatusCombo" BorderBrush="#3a7ff9" BorderThickness="1"
+                              CornerRadius="6" Height="36" MinWidth="160" Margin="0,0,0,0">
+                        <ComboBoxItem Content="Active"/>
+                        <ComboBoxItem Content="Inactive"/>
+                    </ComboBox>
+
+                    <!-- Divider -->
+                    <Border Height="1" Background="#F0F0F0" Margin="0,24,0,20"/>
+
+                    <!-- Action buttons -->
+                    <StackPanel x:Name="ActionBar" Orientation="Horizontal" Spacing="10">
+                        <Button x:Name="EditButton" Click="EditButton_Click"
+                                Background="#3a7ff9" CornerRadius="6" Padding="20,8">
+                            <TextBlock Text="Edit" Foreground="White" FontSize="13" FontWeight="SemiBold"/>
+                        </Button>
+                        <Button x:Name="SaveButton" Click="SaveButton_Click" Visibility="Collapsed"
+                                Background="#3a7ff9" CornerRadius="6" Padding="20,8">
+                            <TextBlock Text="Save" Foreground="White" FontSize="13" FontWeight="SemiBold"/>
+                        </Button>
+                        <Button x:Name="CancelButton" Click="CancelButton_Click" Visibility="Collapsed"
+                                Background="White" BorderBrush="#3a7ff9" BorderThickness="1" CornerRadius="6" Padding="20,8">
+                            <TextBlock Text="Cancel" Foreground="#3a7ff9" FontSize="13" FontWeight="SemiBold"/>
+                        </Button>
+                        <Button x:Name="DeleteButton" Click="DeleteButton_Click"
+                                Background="White" BorderBrush="#E53935" BorderThickness="1" CornerRadius="6" Padding="20,8">
+                            <TextBlock Text="Delete" Foreground="#E53935" FontSize="13" FontWeight="SemiBold"/>
+                        </Button>
+                    </StackPanel>
+
+                    <!-- Delete confirmation -->
+                    <Border x:Name="DeleteConfirm" Visibility="Collapsed"
+                            Background="#FFF5F5" BorderBrush="#E53935" BorderThickness="1"
+                            CornerRadius="8" Padding="16" Margin="0,16,0,0">
+                        <StackPanel>
+                            <TextBlock Text="Are you sure you want to delete this item?"
+                                       Foreground="#E53935" FontWeight="SemiBold" FontSize="13" Margin="0,0,0,12"/>
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <Button Click="ConfirmDelete_Click"
+                                        Background="#E53935" CornerRadius="6" Padding="16,8">
+                                    <TextBlock Text="Yes, delete" Foreground="White" FontSize="13" FontWeight="SemiBold"/>
+                                </Button>
+                                <Button Click="CancelDelete_Click"
+                                        Background="White" BorderBrush="#E53935" BorderThickness="1" CornerRadius="6" Padding="16,8">
+                                    <TextBlock Text="Cancel" Foreground="#E53935" FontSize="13" FontWeight="SemiBold"/>
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

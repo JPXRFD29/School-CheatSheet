@@ -30,8 +30,8 @@ namespace Template
             this.InitializeComponent();
             ContentFrame.Navigating += ContentFrame_Navigating;
 
-            ContentFrame.Navigate(typeof(LoginPage));
-            HideHeader();
+            ContentFrame.Navigate(typeof(TemplateDashboardPage));
+            //HideHeader();
         }
 
         private void ContentFrame_Navigating(object sender, NavigatingCancelEventArgs e)
@@ -39,7 +39,7 @@ namespace Template
             if (e.SourcePageType == typeof(LoginPage))
             {
                 // Remove header
-                HideHeader();
+                //HideHeader();
                 return;
             }
 
