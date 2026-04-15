@@ -987,6 +987,49 @@ Maak een tabel met extra verbeterpunten die jullie zelf bedenken. Denk aan verbe
 ```
 
 
+## Verbeterplan Planning (Github)
+
+```
+Zet de belangrijkste verbeterpunten om naar GitHub backlog tickets.
+
+Belangrijke regels:
+- Maak alleen tickets van verbeterpunten die haalbaar zijn voor sprint 2.
+- Gebruik alleen verbeterpunten die logisch voortkomen uit de testresultaten of het verbeterplan.
+- Maak elk ticket kort, duidelijk en concreet.
+- Gebruik een T-shirt inschatting per ticket.
+- Houd rekening met een normale Scrum-planning voor sprint 2.
+
+Voor elk backlog ticket gebruik je deze opmaak:
+
+### Titel
+Geef een korte en duidelijke titel.
+
+### User story
+Schrijf het ticket als user story in deze vorm:
+Als [rol], wil ik [functie], zodat [doel].
+
+### Acceptatiecriteria
+Geef 2 tot 4 duidelijke acceptatiecriteria.
+De criteria moeten meetbaar en testbaar zijn.
+
+### T-shirt planning
+Geef per ticket een T-shirt size:
+- XS
+- S
+- M
+- L
+- XL
+
+Kies de size die past bij de hoeveelheid werk voor sprint 2.
+
+Regels voor de backlog:
+- Zet de belangrijkste en haalbare verbeterpunten bovenaan.
+- Voeg geen extra features toe die niet uit de testen komen.
+- Maak de tickets realistisch voor een schoolproject.
+- Houd de tekst simpel en professioneel.
+```
+
+
 
 
 
